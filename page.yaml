@@ -1,40 +1,13 @@
-swagger: '2.0'
+openapi: 3.0.3
 info:
+  title: Test iframe injection
   version: 1.0.0
-  title: Embedded Page
-  description: >
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Embedded CIA.gov</title>
-      <style>
-        html, body {
-          margin: 0;
-          padding: 0;
-          height: 100%;
-          overflow: hidden;
-        }
-        iframe {
-          border: 0;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100%;
-        }
-      </style>
-    </head>
-    <body>
-      <iframe src="https://cia.gov/"></iframe>
-    </body>
-    </html>
 paths:
-  /:
+  /test:
     get:
+      summary: Test iframe injection
+      description: |
+        <iframe src="https://www.cia.gov" width="600" height="400"></iframe>
       responses:
         '200':
-          description: Embedded cia.gov page
+          description: OK
